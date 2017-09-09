@@ -18,6 +18,7 @@ namespace MP3PlayerMetro
         {
             InitializeComponent();
         }
+        string[] files, paths;
 
         private void metroTile1_Click(object sender, EventArgs e)
         {
@@ -28,16 +29,24 @@ namespace MP3PlayerMetro
 
         private void metroOpenFile_Click(object sender, EventArgs e)
         {
-            openFileDialog1.ShowDialog();
-            if (openFileDialog1.FileName != string.Empty)
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                metroTextBox1.Text = openFileDialog1.FileName;
+                files = openFileDialog1.SafeFileNames;
+                
+                for (int i = 0; i < files.Length; i++)
+                {
+                    listBox1.Items.Add(files[i]);
+                    metroTextBox1.Text = openFileDialog1.SafeFileName;
+                    openFileDialog1.ShowDialog();
+                }
             }
             else
             {
                 metroTextBox1.Text = "Nazwa pliku nie jest określona";
             }
-
+         
         }
 
         private void metroResume_Click(object sender, EventArgs e)
@@ -63,6 +72,11 @@ namespace MP3PlayerMetro
         private void metroPrevious_Click(object sender, EventArgs e)
         {
             axWindowsMediaPlayer1.Ctlcontrols.previous();
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.URL = paths[listBox1.SelectedIndex];
         }
 
         private void metroNext_Click(object sender, EventArgs e)

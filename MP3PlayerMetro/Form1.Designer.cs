@@ -41,6 +41,7 @@
             this.metroStop = new MetroFramework.Controls.MetroTile();
             this.metroPause = new MetroFramework.Controls.MetroTile();
             this.metroPlay = new MetroFramework.Controls.MetroTile();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             // metroTrackBar1
             // 
             this.metroTrackBar1.BackColor = System.Drawing.Color.Transparent;
-            this.metroTrackBar1.Location = new System.Drawing.Point(621, 172);
+            this.metroTrackBar1.Location = new System.Drawing.Point(621, 320);
             this.metroTrackBar1.Name = "metroTrackBar1";
             this.metroTrackBar1.Size = new System.Drawing.Size(169, 53);
             this.metroTrackBar1.TabIndex = 6;
@@ -79,7 +80,7 @@
             // 
             this.metroNext.BackColor = System.Drawing.Color.White;
             this.metroNext.CustomBackground = true;
-            this.metroNext.Location = new System.Drawing.Point(439, 172);
+            this.metroNext.Location = new System.Drawing.Point(438, 320);
             this.metroNext.Name = "metroNext";
             this.metroNext.Size = new System.Drawing.Size(59, 53);
             this.metroNext.TabIndex = 11;
@@ -91,7 +92,7 @@
             // 
             this.metroPrevious.BackColor = System.Drawing.Color.White;
             this.metroPrevious.CustomBackground = true;
-            this.metroPrevious.Location = new System.Drawing.Point(278, 172);
+            this.metroPrevious.Location = new System.Drawing.Point(271, 320);
             this.metroPrevious.Name = "metroPrevious";
             this.metroPrevious.Size = new System.Drawing.Size(49, 53);
             this.metroPrevious.TabIndex = 10;
@@ -103,7 +104,7 @@
             // 
             this.metroResume.BackColor = System.Drawing.Color.White;
             this.metroResume.CustomBackground = true;
-            this.metroResume.Location = new System.Drawing.Point(102, 172);
+            this.metroResume.Location = new System.Drawing.Point(92, 320);
             this.metroResume.Name = "metroResume";
             this.metroResume.Size = new System.Drawing.Size(53, 53);
             this.metroResume.TabIndex = 9;
@@ -115,7 +116,7 @@
             // 
             this.metroTile5.BackColor = System.Drawing.Color.White;
             this.metroTile5.CustomBackground = true;
-            this.metroTile5.Location = new System.Drawing.Point(534, 172);
+            this.metroTile5.Location = new System.Drawing.Point(532, 320);
             this.metroTile5.Name = "metroTile5";
             this.metroTile5.Size = new System.Drawing.Size(57, 53);
             this.metroTile5.TabIndex = 7;
@@ -139,7 +140,7 @@
             // 
             this.metroStop.BackColor = System.Drawing.Color.White;
             this.metroStop.CustomBackground = true;
-            this.metroStop.Location = new System.Drawing.Point(346, 172);
+            this.metroStop.Location = new System.Drawing.Point(343, 320);
             this.metroStop.Name = "metroStop";
             this.metroStop.Size = new System.Drawing.Size(75, 53);
             this.metroStop.TabIndex = 3;
@@ -152,7 +153,7 @@
             // 
             this.metroPause.BackColor = System.Drawing.Color.White;
             this.metroPause.CustomBackground = true;
-            this.metroPause.Location = new System.Drawing.Point(173, 172);
+            this.metroPause.Location = new System.Drawing.Point(165, 320);
             this.metroPause.Name = "metroPause";
             this.metroPause.Size = new System.Drawing.Size(75, 53);
             this.metroPause.TabIndex = 2;
@@ -165,7 +166,7 @@
             // 
             this.metroPlay.BackColor = System.Drawing.Color.White;
             this.metroPlay.CustomBackground = true;
-            this.metroPlay.Location = new System.Drawing.Point(10, 172);
+            this.metroPlay.Location = new System.Drawing.Point(11, 320);
             this.metroPlay.Name = "metroPlay";
             this.metroPlay.Size = new System.Drawing.Size(75, 53);
             this.metroPlay.TabIndex = 1;
@@ -175,11 +176,21 @@
             this.metroPlay.UseTileImage = true;
             this.metroPlay.Click += new System.EventHandler(this.metroTile1_Click);
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(39, 119);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(671, 186);
+            this.listBox1.TabIndex = 12;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(813, 256);
+            this.ClientSize = new System.Drawing.Size(813, 396);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.metroNext);
             this.Controls.Add(this.metroPrevious);
             this.Controls.Add(this.metroResume);
@@ -212,6 +223,7 @@
         private MetroFramework.Controls.MetroTile metroResume;
         private MetroFramework.Controls.MetroTile metroPrevious;
         private MetroFramework.Controls.MetroTile metroNext;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
